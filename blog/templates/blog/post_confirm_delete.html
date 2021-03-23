@@ -1,0 +1,48 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+        
+        <!--================Breadcrumb Area =================-->
+        <section class="breadcrumb_area blog_banner_two">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="page-cover text-center">
+                    <h2 class="page-cover-tittle f_48">Blog Create Post</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li class="active">Blog Create</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <!--================Breadcrumb Area =================-->
+
+</div>
+<div class="whole-wrap">
+    <div class="container">
+<div class="section-top-border">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <h3 class="mb-30 title_color">Post Delete</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Delete Post</legend>
+                    <h2> Are you sure you want to delete the post "{{ object.title }}"</h2>
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-danger" type="submit">Yes,Delete</button>
+                    <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">Cancel</a>  
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-sm-30 element-wrap">
+
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock content %}
