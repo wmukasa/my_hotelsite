@@ -25,9 +25,8 @@ SECRET_KEY = os.environ.get('django_SECRETE_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rwamugyenyihotel.herokuapp.com']
-
-
+#ALLOWED_HOSTS = ['rwamugyenyihotel.herokuapp.com']
+ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,7 +56,7 @@ ROOT_URLCONF = 'my_hotelsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
