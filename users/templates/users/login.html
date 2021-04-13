@@ -1,7 +1,57 @@
 {% extends "blog/base.html" %}
+{% load static %}	
 {% load crispy_forms_tags %}
 {% block content %}
-
+                <!--================Header Area =================-->
+        <header class="header_area">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                  <h1> <a class="navbar-brand logo_h" href="{% url 'blog-home'%}">
+                        <!--<img src="{% static 'image/Logo.png' %}" alt="">-->
+                        RWAMUGYENYI HERITAGE HOTEL
+                    </a></h1>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-home'%}">Home</a></li> 
+                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-about'%}">About us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'blog-accomodation'%}">Accomodation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'blog-gallery'%}">Gallery</a></li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="{% url 'blog-blog'%}" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'blog-blog'%}">Blog</a></li>
+                                    {% if user.is_authenticated %}
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'post-create'%}">Create Post </a></li>
+                                    {% endif %}
+ 
+                                </ul>
+                            </li> 
+                            <li class="nav-item active submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register</a>
+                                <ul class="dropdown-menu">
+                                    {% if user.is_authenticated %}
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'profile'%}">Profile</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'logout'%}">Logout</a></li>
+                                    {% else %}
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'login'%}">Login</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'register'%}">Register</a></li>
+                                    {% endif %}
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#">Elemests</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                        </ul>
+                    </div> 
+                </nav>
+            </div>
+        </header>
         <!--================Breadcrumb Area =================-->
         <section class="breadcrumb_area">
             <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>

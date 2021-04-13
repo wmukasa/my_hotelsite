@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
-{% load crispy_forms_tags %}
+{% load static %}	
 {% block content %}
-                <!--================Header Area =================-->
+                        <!--================Header Area =================-->
         <header class="header_area">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -20,12 +20,12 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item "><a class="nav-link" href="{% url 'blog-home'%}">Home</a></li> 
                             <li class="nav-item "><a class="nav-link" href="{% url 'blog-about'%}">About us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'blog-accomodation'%}">Accomodation</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-accomodation'%}">Accomodation</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'blog-gallery'%}">Gallery</a></li>
-                            <li class="nav-item active submenu dropdown">
+                            <li class="nav-item  submenu dropdown">
                                 <a href="{% url 'blog-blog'%}" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'blog-blog'%}">Blog</a></li>
+                                    <li class="nav-item "><a class="nav-link" href="{% url 'blog-blog'%}">Blog</a></li>
                                     {% if user.is_authenticated %}
                                     <li class="nav-item"><a class="nav-link" href="{% url 'post-create'%}">Create Post </a></li>
                                     {% endif %}
@@ -45,84 +45,84 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="#">Elemests</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="#">Contact</a></li>
                         </ul>
                     </div> 
                 </nav>
             </div>
         </header>
         <!--================Breadcrumb Area =================-->
-        <section class="breadcrumb_area">
+        <section class="breadcrumb_area blog_banner_two">
             <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div class="container">
                 <div class="page-cover text-center">
-                    <h2 class="page-cover-tittle">Reset Password Complete</h2>
+                    <h2 class="page-cover-tittle">Contact Us</h2>
                     <ol class="breadcrumb">
                         <li><a href="index.html">Home</a></li>
-                        <li class="active">Reset Complete</li>
+                        <li class="active">Contact Us</li>
                     </ol>
                 </div>
             </div>
         </section>
-        <!--================Breadcrumb Area =================-->
-<div class="content-section ">
-
-</div>
-<div class="whole-wrap">
-    <div class="container">
-<div class="section-top-border">
-    <div class="row">
-        <div class="col-lg-8 col-md-8">
-            <h3 class="mb-30 title_color"> Reset Password Done</h3>
-
-                <div class="alert alert-info">
-                      Your Password has been set 
+       <!--================Breadcrumb Area =================-->
+        
+        <!--================Contact Area =================-->
+        <section class="contact_area section_gap">
+            <div class="container">
+                <div id="mapBox" class="mapBox" 
+                    data-lat="40.701083" 
+                    data-lon="-74.1522848" 
+                    data-zoom="13" 
+                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+                    data-mlat="40.701083"
+                    data-mlon="-74.1522848">
                 </div>
-                <a href="{% url 'login' %}"> Sign In Here</a>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-sm-30 element-wrap">
-
-            <div class="single-element-widget">
-                <h3 class="mb-30 title_color">Radios</h3>
-                <div class="switch-wrap d-flex justify-content-between">
-                    <p>01. Sample radio</p>
-                    <div class="primary-radio">
-                        <input type="checkbox" id="default-radio">
-                        <label for="default-radio"></label>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>Ntungamo,Uganda</h6>
+                                <p>Rwashamire Ntungamo</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a href="#">+256 704 160 994 </a></h6>
+                                <!--<p>Mon to Fri 9am to 6 pm</p>-->
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">rwamugyenyihotel.com </a></h6>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="switch-wrap d-flex justify-content-between">
-                    <p>02. Primary Color radio</p>
-                    <div class="primary-radio">
-                        <input type="checkbox" id="primary-radio" checked>
-                        <label for="primary-radio"></label>
-                    </div>
-                </div>
-                <div class="switch-wrap d-flex justify-content-between">
-                    <p>03. Confirm Color radio</p>
-                    <div class="confirm-radio">
-                        <input type="checkbox" id="confirm-radio" checked>
-                        <label for="confirm-radio"></label>
-                    </div>
-                </div>
-                <div class="switch-wrap d-flex justify-content-between">
-                    <p>04. Disabled radio</p>
-                    <div class="disabled-radio">
-                        <input type="checkbox" id="disabled-radio" disabled>
-                        <label for="disabled-radio"></label>
-                    </div>
-                </div>
-                <div class="switch-wrap d-flex justify-content-between">
-                    <p>05. Disabled radio active</p>
-                    <div class="disabled-radio">
-                        <input type="checkbox" id="disabled-radio-active" checked disabled>
-                        <label for="disabled-radio-active"></label>
+                    <div class="col-md-9">
+                        <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" value="submit" class="btn theme_btn button_hover">Send Message</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
+        </section>
+        <!--================Contact Area =================-->
+       
 {% endblock content %}
